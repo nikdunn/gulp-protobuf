@@ -140,6 +140,10 @@ export interface PbtsOptions {
      * Whether building the main library without any imports (default false)
      */
     main?: boolean;
+    /**
+     * Whether building the main library without any imports (default false)
+     */
+    import?: string;
 }
 
 function task(fn: (args: Array<string>, callback: (err: Error|null, output?: string) => {}) => void, options: {} = {}, ext: string): Transform {

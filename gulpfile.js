@@ -18,18 +18,24 @@ function handleError() {
 }
 
 // Set watching
-gulp.task("setWatch", () => {
+gulp.task("setWatch", (done) => {
     watching = true;
+    return done();
+});
+
+gulp.task("doWatch", () => {
+    return gulp.watch(srcFiles, ["default"]);
 });
 
 // Clear built directories
-gulp.task("clean", () => {
+gulp.task("clean", (done) => {
     if (!watching) del([nodeDir, typesDir]);
+    return done();
 });
 
 // Lint the source
 gulp.task("lint", () => {
-    gulp.src(srcFiles)
+    return gulp.src(srcFiles)
     .pipe(tslint({
         formatter: "stylish"
     }))
@@ -38,8 +44,7 @@ gulp.task("lint", () => {
     }))
 });
 
-// Build TypeScript source into CommonJS Node modules
-gulp.task("compile", ["clean"], () => {
+gulp.task("compile", () => {
     return merge([
         gulp.src(srcFiles)
         .pipe(typescript.createProject(configPath)())
@@ -52,8 +57,10 @@ gulp.task("compile", ["clean"], () => {
     ]);
 });
 
-gulp.task("watch", ["setWatch", "default"], () => {
-    gulp.watch(srcFiles, ["default"]);
-});
+// Build TypeScript source into CommonJS Node modules
+gulp.task("cleanThenCompile", gulp.series("clean", "compile"));
 
-gulp.task("default", ["lint", "compile"]);
+gulp.task("default", gulp.series("lint", "cleanThenCompile"));
+
+gulp.task("watch", gulp.series("setWatch", "default", "doWatch"));
+
