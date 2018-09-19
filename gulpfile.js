@@ -29,7 +29,7 @@ gulp.task("doWatch", () => {
 
 // Clear built directories
 gulp.task("clean", (done) => {
-    if (!watching) del([nodeDir, typesDir]);
+    if (!watching) del.sync([nodeDir, typesDir]);
     return done();
 });
 
