@@ -23,8 +23,8 @@
 * SOFTWARE.
 */
 
-import { main as pbjsCli } from "protobufjs/cli/pbjs";
-import { main as pbtsCli } from "protobufjs/cli/pbts";
+import { main as pbjsCli } from "@elastisim/protobufjs/cli/pbjs";
+import { main as pbtsCli } from "@elastisim/protobufjs/cli/pbts";
 import { basename, join, dirname, extname } from "path";
 import { obj as through } from "through2";
 import * as PluginError from "plugin-error";
