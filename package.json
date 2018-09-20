@@ -1,6 +1,6 @@
 {
   "name": "@elastisim/gulp-protobuf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Gulp task for the protobufjs pbjs and pbts tools",
   "homepage": "https://github.com/thegecko/gulp-protobuf",
   "author": "Rob Moran <rob@thegecko.org>",
