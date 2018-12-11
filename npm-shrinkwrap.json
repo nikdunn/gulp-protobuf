@@ -5,9 +5,9 @@
   "requires": true,
   "dependencies": {
     "@elastisim/protobufjs": {
-      "version": "6.8.14",
-      "resolved": "http://ste-irad-devsvr:4873/@elastisim%2fprotobufjs/-/protobufjs-6.8.14.tgz",
-      "integrity": "sha512-ym3Q65IOHOqfSBpxwsqsm29cYaHnf8LPTu6AS3dZnAlmGhbBoF1uJRFQSIiQE0Gy2QNTSGFQcPVRKezK81pF/Q==",
+      "version": "6.8.15",
+      "resolved": "http://ste-irad-devsvr:4873/@elastisim%2fprotobufjs/-/protobufjs-6.8.15.tgz",
+      "integrity": "sha512-45IB/1BcOZxNsWqdGklZ8+vMxRDhwimMW+4My1pZ43//VWd17TQwugeuftSlyHI1HSVGM3zSHdIBZwzMVM70aA==",
       "dev": true,
       "requires": {
         "@protobufjs/aspromise": "^1.1.2",
